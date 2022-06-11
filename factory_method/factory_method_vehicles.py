@@ -78,6 +78,30 @@ class Bike(Vehicle):
         return f"Bike: {self._brand}"
 
 
+class Airplane(Vehicle):
+    def __init__(self, brand: str, wheels_count: int = 3, seats_count: int = 100,
+                 vehicle_type: str = "air"):
+        self._brand = brand
+        self._wheels_count = wheels_count
+        self._seats_count = seats_count
+        self._vehicle_type = vehicle_type
+
+    def get_brand(self) -> str:
+        return self._brand
+
+    def get_wheels_count(self) -> int:
+        return self._wheels_count
+
+    def get_seats_count(self) -> int:
+        return self._seats_count
+
+    def get_vehicle_type(self) -> str:
+        return self._vehicle_type
+
+    def __str__(self):
+        return f"Airplane: {self._brand}"
+
+
 class VehicleFactory:
     def create(self) -> Vehicle:
         pass
@@ -93,6 +117,11 @@ class RometBikeCreator(VehicleFactory):
         return Bike("Romet")
 
 
+class BoeingAirplaneCreator(VehicleFactory):
+    def create(self) -> Airplane:
+        return Airplane("Boeing")
+
+
 if __name__ == '__main__':
     vehicle_type: str = input("select vehicle type [bike, car, airplane]: ")
     vehicle_factory: Union[VehicleFactory, None] = None
@@ -101,8 +130,7 @@ if __name__ == '__main__':
     elif vehicle_type.lower() == 'car':
         vehicle_factory = BMWCarCreator()
     elif vehicle_type.lower() == 'airplane':
-        # BoeingAirplane
-        pass
+        vehicle_factory = BoeingAirplaneCreator()
 
     if vehicle_factory:
         vehicle: Vehicle = vehicle_factory.create()
