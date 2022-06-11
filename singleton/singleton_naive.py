@@ -10,7 +10,7 @@ class Singleton:
 
     def __init__(self):
         if not self.__instance:
-            print("First object of the class, shared instance doesn't exist yet.")
+            print("First object of the class, shared instance doesn't exist yet!")
         self.val = 0
 
     def print_val(self):
