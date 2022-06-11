@@ -11,7 +11,7 @@ class MyJokes:
         return random.choice(self._jokes)
 
 
-class JokeAPIAdapter(JokeAPIConnector):
+class JokeAPIAdapter(JokeAPIConnector, MyJokes):
     pass
 
 
