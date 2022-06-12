@@ -36,3 +36,7 @@ def path_builder(*args):
 
 def multiply(a, b):
     return a * b
+
+from python_style_guide import multiply
+
+a = multiply(2, 3)
