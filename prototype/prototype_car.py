@@ -2,10 +2,11 @@ import copy
 
 
 class Car:
-    def __init__(self, wheels_count: int, doors_count: int, brand: str = '', color: str = ''):
+    def __init__(self, wheels_count: int, doors_count: int, brand: str = '', model: str = '', color: str = ''):
         self._wheels_count = wheels_count
         self._doors_count = doors_count
         self._brand = brand
+        self._model = model
         self._color = color
 
     @property
@@ -33,6 +34,14 @@ class Car:
         self._brand = value
 
     @property
+    def model(self) -> str:
+        return self._model
+
+    @model.setter
+    def model(self, value: str) -> None:
+        self._model = value
+
+    @property
     def color(self) -> str:
         return self._color
 
@@ -52,9 +61,10 @@ class CarManager:
     _base_car = Car(4, 5)
 
     @staticmethod
-    def create_car_with_color(brand: str, color: str) -> Car:
+    def create_car_with_color(brand: str, model: str, color: str) -> Car:
         base_car_clone = CarManager._base_car.clone()
         base_car_clone.brand = brand
+        base_car_clone.model = model
         base_car_clone.color = color
         return base_car_clone
 
