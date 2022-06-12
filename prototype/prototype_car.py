@@ -60,8 +60,8 @@ class CarManager:
 
 
 if __name__ == '__main__':
-    car_1 = CarManager.create_car_with_color('Audi', 'Pink')
-    car_2 = CarManager.create_car_with_color('Skoda', 'Aquamarine')
+    car_1 = CarManager.create_car_with_color('Audi', 'A4', 'Pink')
+    car_2 = CarManager.create_car_with_color('Skoda', 'Fabia', 'Aquamarine')
 
     print(car_1)
     print(car_2)
