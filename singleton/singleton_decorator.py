@@ -1,4 +1,8 @@
+"""Module implementing singleton with decorator"""
+
+
 def singleton(class_):
+    """kanapka"""
     __instances = {}
 
     def get_instance(*args, **kwargs):
@@ -8,14 +12,18 @@ def singleton(class_):
     return get_instance
 
 
+# pylint: disable=too-few-public-methods
 @singleton
 class FirstClass:
+    """Just a FirstClass"""
     def __init__(self):
         self.val: int = 0
 
 
+# pylint: disable=too-few-public-methods
 @singleton
 class SecondClass:
+    """Just a SecondClass"""
     def __init__(self):
         self.val: int = 0
 
